@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/app_theme_color">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/navigation_profile_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="18dp"
+            android:padding="4dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/abc_vector_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circular"
+            app:strokeColor="@color/white"
+            app:strokeWidth="4dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_student_name_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/navigation_profile_pic"
+            app:layout_constraintStart_toEndOf="@+id/navigation_profile_pic"
+            app:layout_constraintTop_toTopOf="@+id/navigation_profile_pic">
+
+            <TextView
+                android:id="@+id/navigation_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P N Bharat Kumar"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/navigation_uid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TNU2018020100004"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout></layout>
