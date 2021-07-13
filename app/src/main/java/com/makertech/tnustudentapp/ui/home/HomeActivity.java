@@ -11,7 +11,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.databinding.ActivityHomeBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
-import com.makertech.tnustudentapp.ui.fragments.NoticeFragment;
+import com.makertech.tnustudentapp.ui.notice.NoticeFragment;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
