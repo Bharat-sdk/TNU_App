@@ -1,6 +1,7 @@
 package com.makertech.tnustudentapp.ui.notice;
 
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.library.baseAdapters.BR;
 
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.data.local.NoticeData;
@@ -12,26 +13,23 @@ import com.makertech.tnustudentapp.ui.base.BaseViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoticeFragment extends BaseFragment {
-FragmentStudentNoticeBinding binding;
-    public List<NoticeData> noticeDataList = new ArrayList<>();
+public class NoticeFragment extends BaseFragment<FragmentStudentNoticeBinding,NoticeViewModel> {
 
     @Override
     protected void initView() {
         prepareNotice();
-        NoticeAdapter noticeAdapter = new NoticeAdapter(noticeDataList);
-        binding = DataBindingUtil.setContentView(getActivity(),R.layout.fragment_student_notice);
-        binding.setAdapter(noticeAdapter);
+        NoticeAdapter noticeAdapter = new NoticeAdapter(prepareNotice());
+        getViewBinding().noticeRecyclerView.setAdapter(noticeAdapter);
     }
 
     @Override
     protected Integer getBindingVariable() {
-        return 2;
+        return BR._all;
     }
 
     @Override
-    protected BaseViewModel initialViewModel() {
-        return null;
+    protected NoticeViewModel initialViewModel() {
+        return new NoticeViewModel();
     }
 
     @Override
@@ -39,7 +37,8 @@ FragmentStudentNoticeBinding binding;
         return R.layout.fragment_student_notice;
     }
 
-    void prepareNotice() {
+    List<NoticeData> prepareNotice() {
+         List<NoticeData> noticeDataList = new ArrayList<>();
         NoticeData notice = new NoticeData("Pranam Paul",R.id.tnu_name_login_screen, R.drawable.ic_icon_awesome_user_alt);
         noticeDataList.add(notice);
         notice = new NoticeData("Pooja Thakral",R.id.tnu_name_login_screen, R.drawable.ic_icon_awesome_user_alt);
@@ -50,5 +49,6 @@ FragmentStudentNoticeBinding binding;
         noticeDataList.add(notice);
         notice = new NoticeData("Raj Zamal",R.id.tnu_name_login_screen, R.drawable.ic_icon_awesome_user_alt);
         noticeDataList.add(notice);
+        return noticeDataList;
     }
 }

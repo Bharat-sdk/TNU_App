@@ -12,9 +12,12 @@ import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.databinding.ActivityHomeBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
 import com.makertech.tnustudentapp.ui.notice.NoticeFragment;
+import com.makertech.tnustudentapp.ui.work.WorkFragment;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 import nl.joery.animatedbottombar.AnimatedBottomBar;
 
@@ -27,7 +30,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
     protected void initView() {
         getSupportFragmentManager().beginTransaction().add(R.id.container_root,new NoticeFragment()).commit();
         setSupportActionBar(getViewBinding().toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         setActionBarDrawerToggle();
         getViewBinding().bottomNavigation.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener() {
             @Override
@@ -41,8 +44,8 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
                     }
                     break;
                     case R.id.tab_work: {
-                        //    fragment = new AboutFragment();
-                        Toast.makeText(getApplicationContext(),"work",Toast.LENGTH_SHORT).show();
+                       fragment = new WorkFragment();
+
                     }
                     break;
                     case R.id.tab_map: {
