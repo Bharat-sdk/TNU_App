@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="adapter"
-            type="com.makertech.tnustudentapp.ui.work.WorkAdapter" />
-    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,16 +20,55 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".95" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/work_recycler_view"
+        <Button
             android:layout_width="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:adapter="@{adapter}"
-            app:layout_constraintStart_toStartOf="@id/guidelinestart"
-            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            android:layout_height="70dp"
+            android:id="@+id/btn_assignments"
+            android:layout_marginTop="80dp"
+            android:text="Assignments"
+            android:elevation="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guidelinestart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineend"
+            android:background="@drawable/work_button_selector"
             />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/btn_attendance"
+            android:layout_marginTop="80dp"
+            android:text="Attendance"
+            android:elevation="16dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_assignments"
+            app:layout_constraintStart_toEndOf="@id/guidelinestart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineend"
+            android:background="@drawable/work_button_selector"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/btn_timetable"
+            android:layout_marginTop="80dp"
+            android:text="Time Table"
+            android:elevation="16dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_attendance"
+            app:layout_constraintStart_toEndOf="@id/guidelinestart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineend"
+            android:background="@drawable/work_button_selector"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/btn_teacheravailibality"
+            android:layout_marginTop="80dp"
+            android:text="Teacher Availability"
+            android:elevation="16dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_timetable"
+            app:layout_constraintStart_toEndOf="@id/guidelinestart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineend"
+            android:background="@drawable/work_button_selector"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,15 +4,17 @@ import androidx.databinding.library.baseAdapters.BR;
 
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.databinding.FragmentWorkAttendanceWeekdaysBinding;
+import com.makertech.tnustudentapp.ui.base.BaseActivity;
 import com.makertech.tnustudentapp.ui.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeekdaysFragment extends BaseFragment<FragmentWorkAttendanceWeekdaysBinding,WeekdaysViewModel> {
+public class WeekdaysFragment extends BaseActivity<FragmentWorkAttendanceWeekdaysBinding,WeekdaysViewModel> {
     @Override
     protected void initView() {
-
+        WeekdayssAdapter weekdayssAdapter = new WeekdayssAdapter(prepareDay());
+        getViewBinding().weekdaysRecyclerView.setAdapter(weekdayssAdapter);
     }
 
     @Override

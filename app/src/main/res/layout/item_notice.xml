@@ -6,71 +6,71 @@
             name="notice"
             type="com.makertech.tnustudentapp.data.local.NoticeData" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-    android:background="@color/app_background">
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/notice_header"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_marginTop="10dp"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp"
-    >
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/notice_profile_pic"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@{notice.userImage}"
-        android:padding="2dp"
-        app:shapeAppearanceOverlay="@style/circular"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/app_theme_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="@{notice.nameOfNoticeWriter}"
-        app:layout_constraintStart_toEndOf="@id/notice_profile_pic"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_baseline_more_vert_24"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:src="@{notice.noticeImage}"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background">
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notice_header"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/notice_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/notice_profile_pic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@{notice.userImage}"
+                android:padding="2dp"
+                app:shapeAppearanceOverlay="@style/circular"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/app_theme_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="@{notice.nameOfNoticeWriter}"
+                app:layout_constraintStart_toEndOf="@id/notice_profile_pic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:src="@{notice.noticeImage}"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notice_header"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

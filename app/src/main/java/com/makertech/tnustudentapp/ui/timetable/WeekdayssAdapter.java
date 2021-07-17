@@ -37,9 +37,9 @@ public class WeekdayssAdapter extends RecyclerView.Adapter<WeekdayssAdapter.View
     @Override
     public void onBindViewHolder(@NonNull @NotNull WeekdayssAdapter.ViewHolder holder, int position) {
         String dayName = weekdayNames.get(position);
-        char day_first_letter = dayName.charAt(0);
+        String day_first_letter = String.valueOf(dayName.charAt(0));
         holder.txt_day.setText(dayName);
-        holder.txt_day_letter.setText(day_first_letter);
+      holder.txt_day_letter.setText(day_first_letter);
 
     }
 
