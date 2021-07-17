@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
 <activity android:name=".ui.timetable.WeekdaysFragment"/>
+        <activity android:name=".ui.timetable.TimetableFragment"/>
     </application>
 
 </manifest>
