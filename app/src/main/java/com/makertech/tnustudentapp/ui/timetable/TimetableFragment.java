@@ -7,14 +7,12 @@ import androidx.databinding.library.baseAdapters.BR;
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.data.local.DailyTimeTable;
 import com.makertech.tnustudentapp.data.local.TimetableDataSource;
-import com.makertech.tnustudentapp.databinding.FragmentWorkAttendanceDailysubjectsBinding;
-import com.makertech.tnustudentapp.databinding.FragmentWorkAttendanceWeekdaysBinding;
+import com.makertech.tnustudentapp.databinding.ActivityWorkAttendanceDailysubjectsBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
-import com.makertech.tnustudentapp.ui.base.BaseViewModel;
 
 import java.util.List;
 
-public class TimetableFragment extends BaseActivity<FragmentWorkAttendanceDailysubjectsBinding,TimetableViewModel> {
+public class TimetableFragment extends BaseActivity<ActivityWorkAttendanceDailysubjectsBinding,TimetableViewModel> {
 
     TimetableDataSource timetableDataSource;
     @Override
@@ -23,6 +21,8 @@ public class TimetableFragment extends BaseActivity<FragmentWorkAttendanceDailys
         String day = init.getStringExtra("day");
         TimetableAdapter timetableAdapter = new TimetableAdapter(prepareData(day.toLowerCase()));
         getViewBinding().dailyroutineRecyclerView.setAdapter(timetableAdapter);
+        getSupportActionBar().setTitle(day+" TimeTable");
+
     }
 
     @Override
@@ -37,7 +37,7 @@ public class TimetableFragment extends BaseActivity<FragmentWorkAttendanceDailys
 
     @Override
     protected Integer getLayoutId() {
-        return R.layout.fragment_work_attendance_dailysubjects;
+        return R.layout.activity_work_attendance_dailysubjects;
     }
 
     List<DailyTimeTable> prepareData(String key)

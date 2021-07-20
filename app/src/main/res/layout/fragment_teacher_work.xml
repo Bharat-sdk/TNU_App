@@ -23,9 +23,9 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:id="@+id/btn_assignments"
-            android:layout_marginTop="40dp"
-            android:text="Assignments"
+            android:id="@+id/btn_give_assignments"
+            android:layout_marginTop="80dp"
+            android:text="Give Assignments"
             android:elevation="16dp"
             android:textAllCaps="false"
             android:textSize="22sp"
@@ -39,15 +39,15 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:id="@+id/btn_attendance"
+            android:id="@+id/btn_take_attendance"
             android:layout_marginTop="80dp"
-            android:text="Attendance"
+            android:text="Take Attendance"
             android:textColor="@color/black"
             android:elevation="16dp"
             android:textAllCaps="false"
             android:textSize="22sp"
             android:fontFamily="@font/mons_medium"
-            app:layout_constraintTop_toBottomOf="@id/btn_assignments"
+            app:layout_constraintTop_toBottomOf="@id/btn_give_assignments"
             app:layout_constraintStart_toEndOf="@id/guidelinestart"
             app:layout_constraintEnd_toStartOf="@id/guidelineend"
             android:background="@drawable/work_button_selector"
@@ -63,27 +63,12 @@
             android:textSize="22sp"
             android:fontFamily="@font/mons_medium"
             android:elevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/btn_attendance"
+            app:layout_constraintTop_toBottomOf="@id/btn_take_attendance"
             app:layout_constraintStart_toEndOf="@id/guidelinestart"
             app:layout_constraintEnd_toStartOf="@id/guidelineend"
             android:background="@drawable/work_button_selector"
             />
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:id="@+id/btn_teacheravailibality"
-            android:layout_marginTop="80dp"
-            android:text="Teacher Availability"
-            android:textColor="@color/black"
-            android:textAllCaps="false"
-            android:textSize="22sp"
-            android:fontFamily="@font/mons_medium"
-            android:elevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/btn_timetable"
-            app:layout_constraintStart_toEndOf="@id/guidelinestart"
-            app:layout_constraintEnd_toStartOf="@id/guidelineend"
-            android:background="@drawable/work_button_selector"
-            />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

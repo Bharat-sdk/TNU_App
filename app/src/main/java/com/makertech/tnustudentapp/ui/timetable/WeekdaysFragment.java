@@ -15,6 +15,7 @@ public class WeekdaysFragment extends BaseActivity<FragmentWorkAttendanceWeekday
     protected void initView() {
         WeekdayssAdapter weekdayssAdapter = new WeekdayssAdapter(prepareDay());
         getViewBinding().weekdaysRecyclerView.setAdapter(weekdayssAdapter);
+        getSupportActionBar().setTitle("Week Days");
     }
 
     @Override

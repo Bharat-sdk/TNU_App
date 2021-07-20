@@ -1,6 +1,5 @@
-package com.makertech.tnustudentapp.ui.home;
+package com.makertech.tnustudentapp.uiTeacher.homeTeacher;
 
-import android.media.Image;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -8,14 +7,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.databinding.ActivityHomeBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
+import com.makertech.tnustudentapp.ui.home.HomeViewModel;
 import com.makertech.tnustudentapp.ui.notice.NoticeFragment;
 import com.makertech.tnustudentapp.ui.work.WorkFragment;
+import com.makertech.tnustudentapp.uiTeacher.noticeTeacher.TeacherNoticeFragment;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,25 +26,25 @@ import java.util.Objects;
 
 import nl.joery.animatedbottombar.AnimatedBottomBar;
 
-public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel> implements NavigationView.OnNavigationItemSelectedListener  {
+public class TeacherHomeActivity extends BaseActivity<ActivityHomeBinding,TeacherHomeViewModel> implements NavigationView.OnNavigationItemSelectedListener  {
     ActionBarDrawerToggle actionBarDrawerToggle;
-    TextView name_of_student , student_uid;
-
-
+    TextView name_of_teacher , teacher_uid;
 
 
     @Override
     protected void initView() {
 
-        getSupportFragmentManager().beginTransaction().add(R.id.container_root,new NoticeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container_root,new TeacherNoticeFragment()).commit();
         setSupportActionBar(getViewBinding().toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         setActionBarDrawerToggle();
+        getViewBinding().navigationviewMain.getMenu().clear();
+        getViewBinding().navigationviewMain.inflateMenu(R.menu.menu_teacher_navigation_drawer);
 
         // Setting user details to navigation Header
         View header = getViewBinding().navigationviewMain.getHeaderView(0);
-        name_of_student = header.findViewById(R.id.navigation_username);
-        student_uid = header.findViewById(R.id.navigation_uid);
+        name_of_teacher = header.findViewById(R.id.navigation_username);
+        teacher_uid = header.findViewById(R.id.navigation_uid);
 
 
 
@@ -53,12 +55,12 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
                 switch (newTab.getId()) {
                     case R.id.tab_home: {
 
-                        fragment = new NoticeFragment();
+                        fragment = new TeacherNoticeFragment();
 
                     }
                     break;
                     case R.id.tab_work: {
-                       fragment = new WorkFragment();
+                        fragment = new WorkFragment();
 
                     }
                     break;
@@ -82,7 +84,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
 
             }
         });
-        }
+    }
 
     private void setActionBarDrawerToggle() {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,getViewBinding().drawerlayout,getViewBinding().toolbar,R.string.open_drawer,R.string.close_drawer);
@@ -95,12 +97,12 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
 
     @Override
     protected Integer getBindingVariable() {
-        return 1;
+        return BR._all;
     }
 
     @Override
-    protected HomeViewModel initialViewModel() {
-        return new HomeViewModel();
+    protected TeacherHomeViewModel initialViewModel() {
+        return new TeacherHomeViewModel();
     }
 
     @Override
