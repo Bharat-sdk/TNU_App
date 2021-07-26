@@ -18,6 +18,7 @@ import com.makertech.tnustudentapp.ui.home.HomeViewModel;
 import com.makertech.tnustudentapp.ui.notice.NoticeFragment;
 import com.makertech.tnustudentapp.ui.work.WorkFragment;
 import com.makertech.tnustudentapp.uiTeacher.noticeTeacher.TeacherNoticeFragment;
+import com.makertech.tnustudentapp.uiTeacher.workTeacher.TeacherWorkFragment;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -60,7 +61,7 @@ public class TeacherHomeActivity extends BaseActivity<ActivityHomeBinding,Teache
                     }
                     break;
                     case R.id.tab_work: {
-                        fragment = new WorkFragment();
+                        fragment = new TeacherWorkFragment();
 
                     }
                     break;

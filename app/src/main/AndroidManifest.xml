@@ -11,16 +11,22 @@
         android:theme="@style/Theme.TheNeotiaUniversityStudentApp">
         <activity android:name=".ui.home.HomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+        <activity android:name=".ui.timetable.WeekdaysFragment"/>
+        <activity android:name=".ui.timetable.TimetableFragment"/>
+        <activity android:name=".ui.availiblity.TeacherAvailiblityActivity"/>
+        <activity android:name=".ui.attendance.StudentAttendanceActivity"/>
+        <activity android:name=".uiTeacher.homeTeacher.TeacherHomeActivity"  android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+        <activity android:name=".uiTeacher.attendanceTeacher.TeacherAttendanceActivity"/>
+
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<activity android:name=".ui.timetable.WeekdaysFragment"/>
-        <activity android:name=".ui.timetable.TimetableFragment"/>
-        <activity android:name=".ui.availiblity.TeacherAvailiblityActivity"/>
-        <activity android:name=".ui.attendance.StudentAttendanceActivity"/>
-        <activity android:name=".uiTeacher.homeTeacher.TeacherHomeActivity"/>
+
     </application>
 
 </manifest>

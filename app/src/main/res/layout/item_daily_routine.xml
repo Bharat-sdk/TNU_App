@@ -23,14 +23,14 @@
 
         <TextView
             android:id="@+id/txt_capital_letter_weekday"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/weekday_capital_letter_shape"
             android:gravity="center"
             android:text="D"
             android:textAlignment="center"
             android:textColor="@color/app_theme_color"
-            android:textSize="45sp"
+            android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,23 +49,23 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="@{dayWiseRoutine.subject}"
-            android:fontFamily="@font/mons_medium"
+            android:fontFamily="@font/mons_semibold"
             android:textAlignment="textStart"
             android:singleLine="false"
             android:layout_marginStart="15dp"
             android:textColor="@color/app_theme_color"
-            android:textSize="22sp"
+            android:textSize="18sp"
             />
             <TextView
                 android:id="@+id/txt_timing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{dayWiseRoutine.period_time}"
-                android:fontFamily="@font/mons_medium"
+                android:fontFamily="@font/mons_semibold"
                 android:textAlignment="center"
                 android:layout_marginStart="15dp"
                 android:textColor="@color/app_theme_color"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 />
 
         </LinearLayout>

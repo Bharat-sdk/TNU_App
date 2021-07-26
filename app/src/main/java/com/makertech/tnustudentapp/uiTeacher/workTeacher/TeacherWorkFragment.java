@@ -11,6 +11,7 @@ import com.makertech.tnustudentapp.ui.attendance.StudentAttendanceActivity;
 import com.makertech.tnustudentapp.ui.availiblity.TeacherAvailiblityActivity;
 import com.makertech.tnustudentapp.ui.base.BaseFragment;
 import com.makertech.tnustudentapp.ui.timetable.WeekdaysFragment;
+import com.makertech.tnustudentapp.uiTeacher.attendanceTeacher.TeacherAttendanceActivity;
 
 public class TeacherWorkFragment extends BaseFragment<FragmentTeacherWorkBinding,TeacherWorkViewModel> {
     @Override
@@ -27,7 +28,7 @@ public class TeacherWorkFragment extends BaseFragment<FragmentTeacherWorkBinding
         getViewBinding().btnTakeAttendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), StudentAttendanceActivity.class);
+                Intent intent = new Intent(getActivity(), TeacherAttendanceActivity.class);
                 startActivity(intent);
             }
         });
