@@ -12,7 +12,6 @@ public class AppSharedPreferences {
 private AppSharedPreferences(Context context)
 {
     sharedPreferences =  context.getSharedPreferences("TNUAPPSHAREDPREFERENCE",Context.MODE_PRIVATE);
-
 }
 
     public static AppSharedPreferences getInstance(Context context)

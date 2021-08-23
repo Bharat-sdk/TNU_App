@@ -1,20 +1,26 @@
 package com.makertech.tnustudentapp.ui.timetable;
 
+import android.content.Intent;
+import android.widget.Toast;
+
 import androidx.databinding.library.baseAdapters.BR;
 
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.databinding.FragmentWorkAttendanceWeekdaysBinding;
+import com.makertech.tnustudentapp.listners.OnRecyclerViewItemClick;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
 import com.makertech.tnustudentapp.ui.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeekdaysFragment extends BaseActivity<FragmentWorkAttendanceWeekdaysBinding,WeekdaysViewModel> {
+public class WeekdaysFragment extends BaseActivity<FragmentWorkAttendanceWeekdaysBinding,WeekdaysViewModel> implements OnRecyclerViewItemClick {
     @Override
     protected void initView() {
         WeekdayssAdapter weekdayssAdapter = new WeekdayssAdapter(prepareDay());
+        weekdayssAdapter.setOnRecyclerViewItemClick(this);
         getViewBinding().weekdaysRecyclerView.setAdapter(weekdayssAdapter);
+
         getSupportActionBar().setTitle("Week Days");
     }
 
@@ -42,4 +48,12 @@ public class WeekdaysFragment extends BaseActivity<FragmentWorkAttendanceWeekday
         weekdaylist.add("Friday");
         return weekdaylist;
      }
+
+    @Override
+    public void onRecyclerViewItemClick(int position, Object o) {
+        Intent intent = new Intent(getApplicationContext(),TimetableFragment.class);
+        intent.putExtra("day",o.toString());
+        startActivity(intent);
+
+    }
 }

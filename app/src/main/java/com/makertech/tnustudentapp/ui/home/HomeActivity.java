@@ -1,6 +1,7 @@
 package com.makertech.tnustudentapp.ui.home;
 
 import android.media.Image;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
 public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel> implements NavigationView.OnNavigationItemSelectedListener  {
     ActionBarDrawerToggle actionBarDrawerToggle;
     TextView name_of_student , student_uid;
+Menu menu;
 
 
 
@@ -43,6 +45,10 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
         View header = getViewBinding().navigationviewMain.getHeaderView(0);
         name_of_student = header.findViewById(R.id.navigation_username);
         student_uid = header.findViewById(R.id.navigation_uid);
+        menu = getViewBinding().navigationviewMain.getMenu();
+        MenuItem item = menu.findItem(R.id.nav_menu_dept);
+
+
 
 
 

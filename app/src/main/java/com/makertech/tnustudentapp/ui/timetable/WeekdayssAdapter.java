@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.makertech.tnustudentapp.R;
+import com.makertech.tnustudentapp.listners.OnRecyclerViewItemClick;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class WeekdayssAdapter extends RecyclerView.Adapter<WeekdayssAdapter.ViewHolder> {
 
     List<String> weekdayNames;
+   private OnRecyclerViewItemClick onRecyclerViewItemClick;
 
     public WeekdayssAdapter(List<String>weekdayNames) {
         this.weekdayNames = weekdayNames;
@@ -45,10 +47,10 @@ public class WeekdayssAdapter extends RecyclerView.Adapter<WeekdayssAdapter.View
       holder.card_weekday.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-            String dayname1 = holder.txt_day.getText().toString();
-              Intent intent = new Intent(holder.context,TimetableFragment.class);
-              intent.putExtra("day",dayname1);
-              holder.context.startActivity(intent);
+           if(onRecyclerViewItemClick!= null)
+           {
+               onRecyclerViewItemClick.onRecyclerViewItemClick(position,dayName);
+           }
           }
       });
 
@@ -72,5 +74,9 @@ public class WeekdayssAdapter extends RecyclerView.Adapter<WeekdayssAdapter.View
             card_weekday = itemView.findViewById(R.id.card_weekday);
             context = itemView.getContext();
         }
+    }
+
+    public void setOnRecyclerViewItemClick(OnRecyclerViewItemClick onRecyclerViewItemClick) {
+        this.onRecyclerViewItemClick = onRecyclerViewItemClick;
     }
 }

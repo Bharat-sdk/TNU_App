@@ -16,11 +16,13 @@ import com.makertech.tnustudentapp.ui.base.BaseActivity;
 import com.makertech.tnustudentapp.ui.home.HomeActivity;
 import com.makertech.tnustudentapp.uiTeacher.homeTeacher.TeacherHomeActivity;
 
+
 public class LoginActivity extends BaseActivity<LoginScreenBinding,LoginBaseViewModel> {
     String _mail,_password,_role;
     boolean correct_credentials;
     @Override
     protected void initView() {
+        AppSharedPreferences.getInstance(getApplicationContext());
         correct_credentials = false;
         UserDataSource.prepareUserData();
 
@@ -48,10 +50,13 @@ getViewBinding().btnLogin.setOnClickListener(new View.OnClickListener() {
                 break;
             }
         }
-        redirectToTeacherOrStudent(_role);
         AppSharedPreferences.getInstance(getApplicationContext());
         AppSharedPreferences.setIsLogin(true);
         AppSharedPreferences.setRole(_role);
+        if (correct_credentials) {
+            redirectToTeacherOrStudent(_role);
+        }
+
 
     }
 });
@@ -76,19 +81,16 @@ getViewBinding().btnLogin.setOnClickListener(new View.OnClickListener() {
 
     void redirectToTeacherOrStudent(String roles)
     {
-        if (correct_credentials && roles.equals("Teacher"))
+        if (roles.equals("Teacher"))
         {
             Intent intent = new Intent(getApplicationContext(), TeacherHomeActivity.class);
             startActivity(intent);
         }
-        else if (correct_credentials && roles.equals("Student"))
+        else if ( roles.equals("Student"))
         {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(intent);
         }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"Nothing to do",Toast.LENGTH_SHORT).show();
-        }
+        finish();
     }
 }
