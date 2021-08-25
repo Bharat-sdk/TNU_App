@@ -1,0 +1,74 @@
+{ "dailytimetable":[{
+  "day" : "Monday", 
+  "subjects" : [ 
+      {
+    "subjecttitle" : "DBMS " , 
+    "timing" : "10:00 AM - 12:00 AM"
+   },
+    {
+    "subjecttitle" : "C++" , 
+    "timing" : "12:00 AM - 02:00 PM"
+   },
+    {
+    "subjecttitle" :"Computer Graphics" , 
+    "timing" : "02:00 PM - 04:00 PM"
+   }
+]
+}
+,
+{
+  "day" : "Tuesday", 
+  "subjects" : [ 
+      {
+    "subjecttitle" : "DBMS " , 
+    "timing" : "10:00 AM - 12:00 AM"
+   },
+    {
+    "subjecttitle" : "C++" , 
+    "timing" : "12:00 AM - 02:00 PM"
+   },
+    {
+    "subjecttitle" :"Computer Graphics" , 
+    "timing" : "02:00 PM - 04:00 PM"
+   }
+]
+}
+,
+{
+  "day" : "Thursday", 
+  "subjects" : [ 
+      {
+    "subjecttitle" : "DBMS " , 
+    "timing" : "10:00 AM - 12:00 AM"
+   },
+    {
+    "subjecttitle" : "C++" , 
+    "timing" : "12:00 AM - 02:00 PM"
+   },
+    {
+    "subjecttitle" :"Computer Graphics" , 
+    "timing" : "02:00 PM - 04:00 PM"
+   }
+]
+}
+,
+{
+  "day" : "Frriday", 
+  "subjects" : [ 
+      {
+    "subjecttitle" : "DBMS " , 
+    "timing" : "10:00 AM - 12:00 AM"
+   },
+    {
+    "subjecttitle" : "C++" , 
+    "timing" : "12:00 AM - 02:00 PM"
+   },
+    {
+    "subjecttitle" :"Computer Graphics" , 
+    "timing" : "02:00 PM - 04:00 PM"
+   }
+]
+}
+]
+
+}

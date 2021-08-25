@@ -1,0 +1,34 @@
+{ "user":[{
+  "full_name" : "P N Bharat Kumar",
+  "_uid" : "TNU2018020100004",
+  "role" : "Student",
+  "user_password" : "password12" ,
+  "user_email" : "bharatkumar@gmail.com",
+  "sem" : "7"
+},
+{
+  "full_name" : "Raj Zamal",
+  "_uid" : "TNU2018020100001",
+  "role" : "Student",
+  "user_password" : "password12" ,
+  "user_email" : "rajzamal@gmail.com",
+  "sem" : "7"
+},
+{
+  "full_name" : "Pranam Paul",
+  "_uid" : "TNU2018020100024",
+  "role" : "Teacher",
+  "user_password" : "password12" ,
+  "user_email" : "pranampaul@gmail.com",
+  "sem" : "0"
+}
+,{
+  "full_name" : "Bilas Haldar",
+  "_uid" : "TNU2018020100024",
+  "role" : "Teacher",
+  "user_password" : "password12" ,
+  "user_email" : "bilashaldar@gmail.com",
+  "sem" : "0"
+}
+]
+}

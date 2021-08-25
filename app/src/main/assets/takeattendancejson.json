@@ -1,0 +1,27 @@
+{ "attendanceList":[{
+  
+  "student_name" : "Raj Zamal",
+  "present_absent" : false
+},
+{
+  "student_name" : "Raj Zamal",
+  "present_absent" : false
+},
+{
+  "student_name" : "Raj Zamal",
+  "present_absent" : false
+}
+,{
+  "student_name" : "Raj Zamal",
+  "present_absent" : false
+},
+{
+  "student_name" : "Raj Zamal",
+  "present_absent" : false
+},
+{
+   "student_name" : "Raj Zamal",
+  "present_absent" : false
+}
+]
+}

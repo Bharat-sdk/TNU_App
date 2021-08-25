@@ -1,0 +1,30 @@
+{ "teacherAvaiibality":[{
+  "teacherName" : "Pranam Paul ",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Bilas Haldar ",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Ruchi Sharma ",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Raj Zamal",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Bharat Kumar",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Partha HOD",
+  "availiblity" : true
+},
+{
+  "teacherName" : "Jopydeep Mandal",
+  "availiblity" : true
+}
+]
+}
