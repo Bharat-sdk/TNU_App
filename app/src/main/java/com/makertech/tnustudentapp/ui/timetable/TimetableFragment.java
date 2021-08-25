@@ -11,6 +11,7 @@ import com.makertech.tnustudentapp.data.local.DailyTimeTable;
 import com.makertech.tnustudentapp.data.local.TimetableDataSource;
 import com.makertech.tnustudentapp.data.network.timetable.DailytimetableItem;
 import com.makertech.tnustudentapp.data.network.timetable.Response;
+import com.makertech.tnustudentapp.data.network.timetable.SubjectsItem;
 import com.makertech.tnustudentapp.databinding.ActivityWorkAttendanceDailysubjectsBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
 import com.makertech.tnustudentapp.utils.Utils;
@@ -21,6 +22,7 @@ public class TimetableFragment extends BaseActivity<ActivityWorkAttendanceDailys
 
     TimetableDataSource timetableDataSource;
     List<DailytimetableItem> dailytimetableItems;
+    List<SubjectsItem> subjectsItems;
     @Override
     protected void initView() {
         String str = Utils.getJsonFromAssets(getApplicationContext(),"timetablejson.json");
@@ -30,8 +32,16 @@ public class TimetableFragment extends BaseActivity<ActivityWorkAttendanceDailys
         Intent init = getIntent();
         String day = init.getStringExtra("day");
         dailytimetableItems =  response.getDailytimetable();
+        for (int i =0; i<dailytimetableItems.size();i++)
+        {
+            if (dailytimetableItems.get(i).getDay().equals(day))
+            {
+               subjectsItems = dailytimetableItems.get(i).getSubjects();
+               break;
+            }
+        }
 
-        TimetableAdapter timetableAdapter = new TimetableAdapter(prepareData(day.toLowerCase()));
+        TimetableAdapter timetableAdapter = new TimetableAdapter(subjectsItems);
         getViewBinding().dailyroutineRecyclerView.setAdapter(timetableAdapter);
         getSupportActionBar().setTitle(day+" TimeTable");
 

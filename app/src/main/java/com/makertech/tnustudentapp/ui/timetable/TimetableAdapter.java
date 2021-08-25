@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.data.local.DailyTimeTable;
+import com.makertech.tnustudentapp.data.network.timetable.SubjectsItem;
 import com.makertech.tnustudentapp.databinding.ItemDailyRoutineBinding;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TimetableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    List<DailyTimeTable> data;
+    List<SubjectsItem> data;
 
-    public TimetableAdapter(List<DailyTimeTable> data) {
+    public TimetableAdapter(List<SubjectsItem> data) {
         this.data = data;
     }
 
@@ -33,7 +34,7 @@ public class TimetableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecyclerView.ViewHolder holder, int position) {
-        DailyTimeTable dailyTimeTable = data.get(position);
+        SubjectsItem dailyTimeTable = data.get(position);
         TimetableViewHolder timetableViewHolder = (TimetableViewHolder) holder;
         timetableViewHolder.bind(dailyTimeTable);
     }

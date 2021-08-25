@@ -4,7 +4,7 @@
     <data>
         <variable
             name="dayWiseRoutine"
-            type="com.makertech.tnustudentapp.data.local.DailyTimeTable" />
+            type="com.makertech.tnustudentapp.data.network.timetable.SubjectsItem" />
     </data>
 <androidx.cardview.widget.CardView
     android:layout_height="wrap_content"
