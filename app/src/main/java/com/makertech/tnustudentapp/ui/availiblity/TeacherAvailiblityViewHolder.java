@@ -2,18 +2,19 @@ package com.makertech.tnustudentapp.ui.availiblity;
 
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.data.local.TeacherAvailiblity;
+import com.makertech.tnustudentapp.data.network.teacheravailiblity.TeacherAvaiibalityItem;
 import com.makertech.tnustudentapp.databinding.ItemTeacherAvailibalityBinding;
 import com.makertech.tnustudentapp.ui.base.BaseViewHolder;
 
-public class TeacherAvailiblityViewHolder extends BaseViewHolder<TeacherAvailiblity, ItemTeacherAvailibalityBinding> {
+public class TeacherAvailiblityViewHolder extends BaseViewHolder<TeacherAvaiibalityItem, ItemTeacherAvailibalityBinding> {
     public TeacherAvailiblityViewHolder(ItemTeacherAvailibalityBinding itemTeacherAvailibalityBinding) {
         super(itemTeacherAvailibalityBinding);
     }
 
     @Override
-    protected void bind(TeacherAvailiblity teacherAvailiblity) {
-         boolean teacherAvailiblityAvailable = teacherAvailiblity.isAvailable();
-         String teacherName = teacherAvailiblity.getTeacher_name();
+    protected void bind(TeacherAvaiibalityItem teacherAvailiblity) {
+         boolean teacherAvailiblityAvailable = teacherAvailiblity.isAvailiblity();
+         String teacherName = teacherAvailiblity.getTeacherName();
          String capitalLetterTeacherName = String.valueOf(teacherName.charAt(0));
          if (teacherAvailiblityAvailable)
          {

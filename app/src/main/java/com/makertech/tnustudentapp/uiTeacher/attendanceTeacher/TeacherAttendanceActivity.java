@@ -8,10 +8,13 @@ import android.widget.TimePicker;
 
 import androidx.databinding.library.baseAdapters.BR;
 
+import com.google.gson.Gson;
 import com.makertech.tnustudentapp.R;
 import com.makertech.tnustudentapp.data.local.AttendanceListData;
+import com.makertech.tnustudentapp.data.network.takeattendance.Responseattendancelist;
 import com.makertech.tnustudentapp.databinding.ActivityTeacherAttendanceBinding;
 import com.makertech.tnustudentapp.ui.base.BaseActivity;
+import com.makertech.tnustudentapp.utils.Utils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,8 +29,12 @@ public class TeacherAttendanceActivity extends BaseActivity<ActivityTeacherAtten
 
     @Override
     protected void initView() {
+        String str = Utils.getJsonFromAssets(getApplicationContext(),"takeattendancejson.json");
+        Gson gson = new Gson();
+        Responseattendancelist responseattendancelist = gson.fromJson(str,Responseattendancelist.class);
 
-        TeacherAttendanceAdapter teacherAttendanceAdapter = new TeacherAttendanceAdapter(preparesList());
+
+        TeacherAttendanceAdapter teacherAttendanceAdapter = new TeacherAttendanceAdapter(responseattendancelist.getAttendanceList());
         getViewBinding().attendanceSheetRecyclerView.setAdapter(teacherAttendanceAdapter);
 
         getViewBinding().txtSelectDate.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +76,8 @@ public class TeacherAttendanceActivity extends BaseActivity<ActivityTeacherAtten
         return R.layout.activity_teacher_attendance;
     }
 
-   public List<AttendanceListData> preparesList()
+    // local data
+   /*public List<AttendanceListData> preparesList()
     {
 
         AttendanceListData attendanceListData = new AttendanceListData("Bharat Kumar",false);
@@ -86,5 +94,5 @@ public class TeacherAttendanceActivity extends BaseActivity<ActivityTeacherAtten
         attendanceList.add(attendanceListData);
         return attendanceList;
 
-    }
+    }*/
 }

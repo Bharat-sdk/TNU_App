@@ -3,7 +3,7 @@ package com.makertech.tnustudentapp.data.network.takeattendance;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class Response{
+public class Responseattendancelist {
 
 	@SerializedName("attendanceList")
 	private List<AttendanceListItem> attendanceList;

@@ -20,7 +20,7 @@ import java.util.List;
 
 public class TimetableFragment extends BaseActivity<ActivityWorkAttendanceDailysubjectsBinding,TimetableViewModel> {
 
-    TimetableDataSource timetableDataSource;
+//    TimetableDataSource timetableDataSource;  // This is local data
     List<DailytimetableItem> dailytimetableItems;
     List<SubjectsItem> subjectsItems;
     @Override
@@ -62,9 +62,10 @@ public class TimetableFragment extends BaseActivity<ActivityWorkAttendanceDailys
         return R.layout.activity_work_attendance_dailysubjects;
     }
 
-    List<DailyTimeTable> prepareData(String key)
+    // This is local data preparation
+   /* List<DailyTimeTable> prepareData(String key)
     {
       TimetableDataSource.addRoutineToMap();
      return TimetableDataSource.returnList(key);
-    }
+    }*/
 }
