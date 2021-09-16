@@ -26,12 +26,4 @@ public class TeacherAvaiibalityItem{
 		return availiblity;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"TeacherAvaiibalityItem{" + 
-			"teacherName = '" + teacherName + '\'' + 
-			",availiblity = '" + availiblity + '\'' + 
-			"}";
-		}
 }
